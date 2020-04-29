@@ -8,6 +8,10 @@
     <!--Linking Bootstrap-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    
+
+    <script src="https://kit.fontawesome.com/701e78aabb.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 </head>
 
 <body>
@@ -18,7 +22,21 @@
     <div class = "container" style = "width:auto; height:auto; padding-top: 50px;">
         <div class = "row" style= "background-color: aqua;  width:1150px; height:600px">
             <div class = "col-3" style="background-color: gold;">
-                Sample
+                <div class="card" style="width: 18rem;">
+                    <div class="card-header">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                              <button class="btn-primary button"><i class="fas fa-search"></i></button>
+                            </div>
+                            <input type="text" class="form-control search-form" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                          </div>
+                    </div>
+                    <ul class="list-group list-group-flush" id="history-list">
+                      <li class="list-group-item">Cras justo odio</li>
+                      <li class="list-group-item">Dapibus ac facilisis in</li>
+                      <li class="list-group-item">Vestibulum at eros</li>
+                    </ul>
+                  </div>
             </div>
             <div class = "col-9" style="background-color: blueviolet;">
                 <div class = "row" style="background-color: bisque; height: 300px">
