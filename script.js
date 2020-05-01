@@ -1,6 +1,12 @@
 $(document).ready(function(){
     $(".button").on("click", function(){
         const searchQuery = $(".search-form").val();
+        $(".search-form").val("");
+
+        var li = $("<li>").addClass("list-group-item list-group-item-action").text(searchQuery);
+        $("#history-list").append(li);
+
+
 
         console.log("Button works:)");
         console.log(searchQuery);
