@@ -65,14 +65,14 @@ function findWeather(city) {
 
         $(".current-day").empty();
 
-        let todayCard = $("<div>").addClass("card");
+        let todayCard = $("<div>").addClass("card today").attr("style","float:center");
         let location = $("<h4>").addClass("card-header").text(response.name + " " + new Date().toLocaleDateString());
         let temperature = $("<p>").addClass("card-text").text("Temperature: " + Math.round((response.main.temp - 273.15) * (9 / 5) + 32) + " degrees Farenheit");
         let humidity = $("<p>").addClass("card-text").text("Humidity: " + response.main.humidity + "%");
         let windSpeed = $("<p>").addClass("card-text").text("Wind Speed: " + Math.round(response.wind.speed * 2.237) + " MPH");
         let weatherImage = $("<img>").attr("src", "http://openweathermap.org/img/w/" + response.weather[0].icon + ".png").attr("style","height:250px");
 
-        let iconCard = $("<div>").addClass("card");
+        let iconCard = $("<div>").addClass("card").attr("style","float:right");
         
         iconCard.append(weatherImage);
         todayCard.append(location, temperature, humidity, windSpeed);
@@ -89,6 +89,25 @@ function findUVI(lat,long){
         url: "http://api.openweathermap.org/data/2.5/uvi?appid=" + apiKey + "&lat=" + lat +"&lon=" + long,
     }).then(function (response){
         console.log("UVI", response);
+
+        let uvi = $("<p>").addClass("card-text").text("UVI: ");
+        let uviIndicator = $("<span>").addClass("btn").text(response.value);
+
+        if(response.value < 3){
+            uviIndicator.addClass("btn-success");
+        }
+        else if( response.value >= 3 && response.value < 7){
+            uviIndicator.addClass("btn-warning");
+        }
+        else{
+            uviIndicator.addClass("btn-danger");
+        }
+
+        uvi.append(uviIndicator);
+        $(".current-day .today").append(uvi);
+
+        
+        
 
     })
 }
