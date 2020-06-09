@@ -19,7 +19,7 @@ const apiKey = "ff48a5f39420daf03bb09b9e21c6fe87";
 function findForecast(city) {
     $.ajax({
         method: "GET",
-        url: "http://api.openweathermap.org/data/2.5/forecast?q=" + city + "&appid=" + apiKey,
+        url: "https://api.openweathermap.org/data/2.5/forecast?q=" + city + "&appid=" + apiKey,
     }).then(function (response) {
 
         console.log(response);
@@ -48,7 +48,7 @@ function findForecast(city) {
 function findWeather(city) {
     $.ajax({
         method: "GET",
-        url: "http://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + apiKey,
+        url: "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + apiKey,
     }).then(function (response) {
         console.log(response);
         console.log(userHistory);
@@ -88,7 +88,7 @@ function findWeather(city) {
 function findUVI(lat,long){
     $.ajax({
         method: "GET",
-        url: "http://api.openweathermap.org/data/2.5/uvi?appid=" + apiKey + "&lat=" + lat +"&lon=" + long,
+        url: "https://api.openweathermap.org/data/2.5/uvi?appid=" + apiKey + "&lat=" + lat +"&lon=" + long,
     }).then(function (response){
         console.log("UVI", response);
 
